@@ -32,6 +32,14 @@ public class Exercise {
 		return chapterId;
 	}
 	
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	
+	public String getQuestion() {
+		return question;
+	}
+	
 	public void setOption1(String option1) {
 		this.option1 = option1;
 	}
