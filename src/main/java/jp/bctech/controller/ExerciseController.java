@@ -1,15 +1,15 @@
 package jp.bctech.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.*;
 
 import jp.bctech.entity.Exercise;
 import jp.bctech.service.ExerciseService;
@@ -33,15 +33,13 @@ public class ExerciseController {
 	@ResponseBody
 	public List<Exercise> fetchRandom() {
 		List<Exercise> list = service.fetchAll();
-		return list;
+		List<Exercise> result = new ArrayList<Exercise>();
 		
-//		List<Exercise> result = new ArrayList<Exercise>();
-//		
-//		Random random = new Random();
-//		int[] values = random.ints(0, list.size()).distinct().limit(10).toArray();
-//		for (int value : values) {
-//			result.add(list.get(value));
-//		}
-//		return result;
+		Random random = new Random();
+		int[] values = random.ints(0, list.size()).distinct().limit(10).toArray();
+		for (int value : values) {
+			result.add(list.get(value));
+		}
+		return result;
 	}
 }
