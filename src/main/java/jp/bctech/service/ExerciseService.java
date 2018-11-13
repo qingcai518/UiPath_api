@@ -25,6 +25,8 @@ public class ExerciseService {
 		exercise.setChapterId(chapterId);
 		
 		Example<Exercise> example = Example.of(exercise);
-		return repository.findAll(example);
+		
+		return repository.findAll();
+//		return repository.findAll(example);
 	}
 }

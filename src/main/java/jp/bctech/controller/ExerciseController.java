@@ -18,7 +18,7 @@ public class ExerciseController {
 	ExerciseService service;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Exercise> fetchAll(@RequestParam(value="chapterId") Long chapterId) {
+	public List<Exercise> fetchAll(@RequestParam(value="chapter_id") Long chapterId) {
 		return service.fetchBy(chapterId);
 	}
 }
