@@ -13,8 +13,8 @@ public class Exercise {
 	String option2;
 	String option3;
 	String option4;
-	int type;
 	String answer;
+	int type;
 	
 	public void setId(Long id) {
 		this.id = id;
@@ -24,12 +24,12 @@ public class Exercise {
 		return id;
 	}
 	
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setChapterId(Long chapterId) {
+		this.chapterId = chapterId;
 	}
 	
-	public String getQuestion() {
-		return question;
+	public Long getChapterId() {
+		return chapterId;
 	}
 	
 	public void setOption1(String option1) {
@@ -70,14 +70,6 @@ public class Exercise {
 	
 	public String getAnswer() {
 		return answer;
-	}
-	
-	public void setChapterId(Long chapterId) {
-		this.chapterId = chapterId;
-	}
-	
-	public Long getChapterId() {
-		return chapterId;
 	}
 	
 	public void setType(int type) {
