@@ -14,7 +14,7 @@ public class Exercise {
 	String option3;
 	String option4;
 	String answer;
-	int type;
+	Integer type;
 	
 	public void setId(Long id) {
 		this.id = id;
@@ -80,11 +80,11 @@ public class Exercise {
 		return answer;
 	}
 	
-	public void setType(int type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 	
-	public int getType() {
+	public Integer getType() {
 		return type;
 	}
 }

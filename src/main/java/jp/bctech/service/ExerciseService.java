@@ -26,7 +26,7 @@ public class ExerciseService {
 		
 		Example<Exercise> example = Example.of(exercise);
 		
-		return repository.findAll();
-//		return repository.findAll(example);
+//		return repository.findAll();
+		return repository.findAll(example);
 	}
 }
