@@ -17,7 +17,7 @@ public class ExerciseService {
 	ExerciseRepository repository;
 	
 	public List<Exercise> fetchAll() {
-		return fetchAll();
+		return repository.findAll();
 	}
 	
 	public List<Exercise> fetchBy(Long chapterId) {
