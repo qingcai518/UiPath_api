@@ -31,12 +31,21 @@ public class ExerciseController {
 	
 	@RequestMapping("/v1/test")
 	@ResponseBody
-	public List<Exercise> fetchRandom(@RequestParam(value="limit") Long limit) {
+	public List<Exercise> fetchRandom(@RequestParam(value="limit", required = false) Long limit) {
 		List<Exercise> list = service.fetchAll();
 		List<Exercise> result = new ArrayList<Exercise>();
 		
+		if (limit == null) {
+			return list;
+		}
+		
 		Random random = new Random();
-		int[] values = random.ints(0, list.size()).distinct().limit(limit).toArray();
+		
+		int[] values = random.ints(0, list.size()).distinct().toArray();
+		
+		if (limit < values.length) {
+			values = random.ints(0, list.size()).distinct().limit(limit).toArray();
+		}
 		for (int value : values) {
 			result.add(list.get(value));
 		}
