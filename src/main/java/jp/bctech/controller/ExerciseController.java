@@ -41,14 +41,16 @@ public class ExerciseController {
 		
 		Random random = new Random();
 		
-		int[] values = random.ints(0, list.size()).distinct().toArray();
-		
-		if (limit < values.length) {
-			values = random.ints(0, list.size()).distinct().limit(limit).toArray();
+		int[] distinctValues = random.ints(0, list.size()).distinct().toArray();
+		if (limit >= distinctValues.length) {
+			return list;
 		}
+		
+		int[] values = random.ints(0, list.size()).distinct().limit(limit).toArray();
 		for (int value : values) {
 			result.add(list.get(value));
 		}
+		
 		return result;
 	}
 }
